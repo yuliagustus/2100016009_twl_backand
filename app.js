@@ -6,7 +6,7 @@ const port = 3000;
 const logger = require('./middleware/logger');
 
 // Routes
-const productRoutes = require('./routes/products');
+const productRouter = require('./routes/products');
 
 // Middleware untuk parsing body pada permintaan POST dan PUT
 app.use(express.json());
@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(logger);
 
 // Mengarahkan rute ke file produk
-app.use('/products', productRoutes);
+app.use('/products', productRouter);
 
 // Penanganan Kesalahan 404 (Not Found)
 app.use((req, res, next) => {
